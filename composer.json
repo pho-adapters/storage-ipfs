@@ -1,0 +1,27 @@
+{
+  "name": "pho-adapters/storage-ipfs",
+  "type": "library",
+  "description": "IPFS storage adapter for the Phở stack.",
+  "homepage": "https://phonetworks.org",
+  "license": "MIT",
+  "authors": [
+        {
+            "name": "Emre Sokullu",
+            "email": "emre@phonetworks.org",
+            "homepage": "http://www.emresokullu.com"
+        }
+    ],
+    "require": {
+        "php":"^7.2",
+        "nebulaprotocol/ipfs-php": "^1.0",
+    "predis/predis": "^1.1"
+    },
+    "provide": {
+        "phonetworks/service-storage-implementation": "1.0"
+    },
+    "autoload": {
+	     "psr-4": {
+		       "Pho\\Kernel\\Services\\Storage\\Adapters\\": ""
+	     }
+    }
+}
