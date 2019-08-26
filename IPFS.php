@@ -60,6 +60,8 @@ class IPFS implements StorageInterface, ServiceInterface
     /**
      * Constructor.
      * 
+     * Example: "{\"hostname\":\"ipfs-1.phonetworks.com\",\"port\":80,\"api_port\":5001,\"backup\":\"\",\"redis\":\"redis://ipfs-1.phonetworks.com:6379\"}"
+     * 
      * @param Kernel $kernel The Pho Kernel to access services
      * @param string $options In Json format, as follows: {"hostname", "port", "api_port", "redis", "backup"}
      */
