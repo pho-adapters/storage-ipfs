@@ -31,7 +31,7 @@ use Predis\Client;
 *
 * @author Emre Sokullu
 */
-class IPFS implements StorageInterface, ServiceInterface
+class Ipfs implements StorageInterface, ServiceInterface
 {
 
     /**
