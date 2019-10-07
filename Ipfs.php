@@ -131,7 +131,14 @@ class Ipfs implements StorageInterface, ServiceInterface
     */
     public function put(string $file, string $path): void
     {
-        $result = $this->ipfs->add($file);
+        try {
+            $result = $this->ipfs->add($file);
+        }
+        catch(\Exception $e) { 
+            $this->kernel->logger()->warning(
+                sprintf("Put issue: %s", $e->getMessage())
+            );
+        }
         $this->redis->set($this->path_normalize($path), $result);
         $this->redis->set("/ipfs/".$result, $this->path_normalize($path));
         $this->backup(__METHOD__, func_get_args());
