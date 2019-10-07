@@ -72,7 +72,7 @@ class Ipfs implements StorageInterface, ServiceInterface
         $this->ipfs = new IPFSclient($options["hostname"], $options["port"], $options["api_port"]);
         $this->redis = new Client($options["redis"]);
         $this->kernel->logger()->info(
-            sprintf("The storage service has started with the %s adapter.", __CLASS__)
+            sprintf("The storage service has started with the %s adapter, and configs %s.", __CLASS__, $options)
         );
         if(isset($options["backup"])) {
             // set up backup
